@@ -1,4 +1,4 @@
-#include "Fila.hpp"
+#include "BFS.hpp"
 #include "DFS.hpp"
 
 int main(){
@@ -7,7 +7,7 @@ int main(){
     Labirinto lab;
     Item_1 d;
 
-    while(opc !=  4){
+    while(opc !=  3){
 
         Menu();
         cout << "DIGITE A OPCAO DESEJADA -> ";
@@ -23,11 +23,9 @@ int main(){
             BFS(&lab);
         }
 
-        if(opc == 3){
-            LeituraConfig(&lab);
-            A(&lab);       
+        if(opc != 1 && opc != 2 && opc != 3){
+            cout << "ERRO: Opcao invalida!" << endl;
         }
-
     }
   
     return 0;

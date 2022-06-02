@@ -1,7 +1,6 @@
 #include "DFS.hpp"
 int n;
 string vetaux[MAXTAM];
-// string Matriz[n][n];
 
 void FPVazia(Pilha *p){
 	p->base = (Block*) malloc (sizeof(Block));
@@ -33,7 +32,6 @@ void Pop(Pilha *p, Item *d){
 
 void PImprime(Pilha *p){
 	Block *aux;
-
 	aux = p->top;
 	while(aux != p->base){
 		cout<<aux->data.val<<" ";
@@ -41,11 +39,13 @@ void PImprime(Pilha *p){
 	}
 cout<<endl;
 }
+
+
 void Matriz_arq( Item_1 d){
 	FILE *arq_m;
 	ifstream arq;
 	string m;
-	arq.open("Matriz_DFS.txt");
+	arq.open("Matriz.txt");
 	if(arq.is_open()){
 		getline(arq, m);
 		n = stoi(m);
@@ -53,7 +53,7 @@ void Matriz_arq( Item_1 d){
 	int Total;
 	Total=n*n;
 	arq.close();
-	arq_m = fopen("Matriz_DFS.txt","r");
+	arq_m = fopen("Matriz.txt","r");
 	for ( int l = 0; l < Total ; ){
 		d.vaux = fgetc(arq_m);
 		m=d.vaux;

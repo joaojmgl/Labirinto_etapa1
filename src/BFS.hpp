@@ -1,5 +1,5 @@
-#ifndef FILA_HPP
-#define FILA_HPP
+#ifndef BFS_HPP
+#define BFS_HPP
 
 #include <iostream>
 #include <fstream>
@@ -28,32 +28,10 @@ struct Labirinto{
 	int vet_aux[MAXTAM];
 };
 
-struct ItemA{
-	int i;
-	int j;
-	float dist;
-};
-
-struct BlockA{
-	ItemA dataA;
-	BlockA *prox;
-};
-
-struct FilaA{
-	BlockA *prim;
-	BlockA *ult;
-};
-
 void FFVazia(Fila *f);
 void Enfileira(Fila *f, ItemB d);
 void Desenfileira(Fila *f, ItemB *d);
 void FImprime(Fila *f);
-
-void FFVaziaA(FilaA *f);
-void EnfileiraA(FilaA *f, ItemA d);
-void DesenfileiraA(FilaA *f, ItemA *d);
-void FImprimeA(FilaA *f);
-bool Verifica_fila_vaziaA(FilaA *f);
 
 void LeituraConfig(Labirinto *lab);
 bool Verifica_fila_vazia(Fila *f);
